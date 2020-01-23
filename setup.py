@@ -1,5 +1,5 @@
 import sys
-from pip.req import parse_requirements
+from pip._internal.req import parse_requirements
 from setuptools import setup
 
 CURRENT_PYTHON = sys.version_info[:2]

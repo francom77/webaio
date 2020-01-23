@@ -1,0 +1,10 @@
+aiohttp==3.6.2
+aiohttp-devtools==0.13.1
+cookiecutter==1.7.0
+environs==7.1.0
+ipdb==0.12.3
+isort==4.3.21
+pytest==5.3.1
+pytest-aiohttp==0.3.0
+pytest-cov==2.8.1
+PyYAML==5.2

@@ -40,7 +40,7 @@ class SimpleRouter(object):
         self.routespatters = []
 
     def register(self, ViewSet: BaseViewSet, basename: str):
-        actions = self.known_actions + self._get_custom_actions(ViewSet)
+        actions = self._get_custom_actions(ViewSet) + self.known_actions
 
         for action in actions:
             current_action = action.get('action')

@@ -87,10 +87,10 @@ jobs:
       - run:
           name: create packages
           command: |
-            make package
+            . venv/bin/activate
+            python setup.py sdist bdist_wheel
       - run:
           name: upload to pypi
           command: |
             . venv/bin/activate
-            python setup.py sdist bdist_wheel
             twine upload dist/*

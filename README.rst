@@ -147,8 +147,10 @@ Creating a view
 
 Firstly we will create a function to handle requests to the index enpoint:
 
+`quickstart/api/views.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/views.py
 
     from aiohttp import web
     
@@ -161,8 +163,9 @@ Firstly we will create a function to handle requests to the index enpoint:
 
 To call the view, we need to map it to a route.
 
+`quickstart/api/routes.py`
+
 .. code-block:: python
-    :caption: quickstart/api/routes.py
 
     from aiohttp import web
 
@@ -174,8 +177,10 @@ To call the view, we need to map it to a route.
 
 Lastly we will register the api's routes in the project routes:
 
+`quickstart/routes.py`
+
 .. code-block:: python
-    :caption: quickstart/routes.py
+    
 
     from apps.api.routes import routespatters as api_routes_patterns
 
@@ -206,8 +211,9 @@ As an aditional feature we want to be able to retrive the google url of an artis
 
 First of all, we need to define our Viewset in the `views.py` module.
 
+`quickstart/api/views.py`
+
 .. code-block:: python
-    :caption: quickstart/api/views.py
 
     import uuid
     from aiohttp import web
@@ -264,8 +270,10 @@ First of all, we need to define our Viewset in the `views.py` module.
 
 To expose the viewset we need to register it in a router:
 
-.. code-block:: python
-    :caption: quickstart/api/routes.py
+`quickstart/api/routes.py`
+
+
+.. code-block:: pythoǹ
 
     from aiohttp import web
     from webaio.routers import SimpleRouter
@@ -289,9 +297,10 @@ Testing
 -------
 To test the defined endpoints, we will extend the class `AioHTTPTestCase` provided by `aiohttp`. Let's create a simple test case for our viewset.
 
+`quickstart/api/tests/test.py`
+
 
 .. code-block:: python
-    :caption: quickstart/api/tests/test.py
 
 
     from aiohttp.test_utils import AioHTTPTestCase, unittest_run_loop
@@ -394,8 +403,10 @@ When `APIException` (or subclasses) is raised, webaio will return a response wit
 
 Let's try what happen if we try to get the detail of a non-existing Artist in our ViewSet. We will write a test to check that: 
 
+`quickstart/api/tests/test.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/tests/test.py}
 
     @unittest_run_loop
     async def test_detail_404(self):
@@ -432,8 +443,10 @@ This happens because the error is not properly handdled in the view.
 
 Firstly we need to add an `exceptions.py` module and define the exception in there:
 
+`quickstart/api/exceptions.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/exceptions.py
 
     from webaio.exceptions import APIException
 
@@ -445,9 +458,11 @@ Firstly we need to add an `exceptions.py` module and define the exception in the
 
 After that, we will modify the detail view:
 
+`quickstart/api/views.py`
+
 
 .. code-block:: python
-    :caption: quickstart/api/views.py
+
 
     async def detail(request):
         id = request.match_info['id']

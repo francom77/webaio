@@ -82,7 +82,7 @@ These files are:
 
 Develpment server
 -----------------
-Let’s verify if the project works. The project template works with Docker and docker-compose. You can find information about `Install docker <https://docs.docker.com/install/>`_ and `Install docker compose https://docs.docker.com/compose/install/>`_ in the official documentation.
+Let’s verify if the project works. The project template works with Docker and docker-compose. You can find information about `Install docker <https://docs.docker.com/install/>`_ and `Install docker compose <https://docs.docker.com/compose/install/>`_ in the official documentation.
 
 In the project root directory, run:
 

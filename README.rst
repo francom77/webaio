@@ -18,7 +18,7 @@ Installing
 
 Install using pip:
 
-.. code-block:: text
+.. code-block:: python
 
     pip install webaio
 
@@ -90,7 +90,8 @@ In the project root directory, run:
 
     $ docker-compose.up
 
-For the first time the docker image will be built. After that the development server will run. webaio uses `aiohttp-devtools https://github.com/aio-libs/aiohttp-devtools>`_  development server.
+
+For the first time the docker image will be built. After that the development server will run. webaio uses `aiottp-devtools`  development server. You chan read the full documentation `here <https://github.com/aio-libs/aiohttp-devtools>`_
 
 You will see an ouput like the following to indicate the project is running:
 
@@ -102,7 +103,7 @@ You will see an ouput like the following to indicate the project is running:
     quickstart    | 01-31 14:03 adev.server.dft INFO     Starting dev server at http://0.0.0.0:8080 ●
 
 
-You can enter to the swagger interface `http://localhost:8080/swagger http://localhost:8080/swagger>`_
+You can enter to the swagger interface `here <http://localhost:8080/swagger>`_.
 We will explain how to register and document enpoints later.
 
 
@@ -181,7 +182,7 @@ Lastly we will register the api's routes in the project routes:
     routespatters = []
     routespatters += api_routes_patterns
 
-You have now wired an index view into the routes. Verify it’s working by accessing to the following url: `http://localhost:8080/ <http://localhost:8080/>`_
+You have now wired an index view into the routes. Verify it’s working by accessing to the `following url <http://localhost:8080/>`_: http://localhost:8080/.
 
 
 **Class bassed views**

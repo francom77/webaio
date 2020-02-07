@@ -187,7 +187,7 @@ Lastly we will register the api's routes in the project routes:
     routespatters = []
     routespatters += api_routes_patterns
 
-You have now wired an index view into the routes. Verify it’s working by accessing to the `following url <http://localhost:8080/>`_: http://localhost:8080/.
+You have now wired an index view into the routes. Verify it’s working by accessing to http://localhost:8080/.
 
 
 **Class bassed views**

@@ -15,7 +15,7 @@ Main Features
 
 Installing
 ----------
-
+    
 Install using pip:
 
 .. code-block:: python
@@ -91,7 +91,7 @@ In the project root directory, run:
     $ docker-compose.up
 
 
-For the first time the docker image will be built. After that the development server will run. webaio uses `aiottp-devtools`  development server. You chan read the full documentation `here <https://github.com/aio-libs/aiohttp-devtools>`_
+For the first time the docker image will be built. After that the development server will run. webaio uses `aiottp-devtools`  development server. You can read the full documentation `here <https://github.com/aio-libs/aiohttp-devtools>`_.
 
 You will see an ouput like the following to indicate the project is running:
 

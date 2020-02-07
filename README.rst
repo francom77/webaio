@@ -416,7 +416,7 @@ Let's try what happen if we try to get the detail of a non-existing Artist in ou
 
 If we run the tests we will see the following error:
 
-    ::
+::
 
     ================================================== test session starts ===================================================
     platform linux -- Python 3.7.5, pytest-5.3.1, py-1.8.1, pluggy-0.13.1

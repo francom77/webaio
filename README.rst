@@ -15,10 +15,10 @@ Main Features
 
 Installing
 ----------
-
+    
 Install using pip:
 
-.. code-block:: text
+.. code-block:: python
 
     pip install webaio
 
@@ -82,7 +82,7 @@ These files are:
 
 Develpment server
 -----------------
-Let’s verify if the project works. The project template works with Docker and docker-compose. You can find information about `Install docker <https://docs.docker.com/install/>`_ and `Install docker compose https://docs.docker.com/compose/install/>`_ in the official documentation.
+Let’s verify if the project works. The project template works with Docker and docker-compose. You can find information about `Install docker <https://docs.docker.com/install/>`_ and `Install docker compose <https://docs.docker.com/compose/install/>`_ in the official documentation.
 
 In the project root directory, run:
 
@@ -90,7 +90,8 @@ In the project root directory, run:
 
     $ docker-compose.up
 
-For the first time the docker image will be built. After that the development server will run. webaio uses `aiohttp-devtools https://github.com/aio-libs/aiohttp-devtools>`_  development server.
+
+For the first time the docker image will be built. After that the development server will run. webaio uses `aiottp-devtools`  development server. You can read the full documentation `here <https://github.com/aio-libs/aiohttp-devtools>`_.
 
 You will see an ouput like the following to indicate the project is running:
 
@@ -102,7 +103,7 @@ You will see an ouput like the following to indicate the project is running:
     quickstart    | 01-31 14:03 adev.server.dft INFO     Starting dev server at http://0.0.0.0:8080 ●
 
 
-You can enter to the swagger interface `http://localhost:8080/swagger http://localhost:8080/swagger>`_
+You can enter to the swagger interface `here <http://localhost:8080/swagger>`_.
 We will explain how to register and document enpoints later.
 
 
@@ -146,8 +147,10 @@ Creating a view
 
 Firstly we will create a function to handle requests to the index enpoint:
 
+`quickstart/api/views.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/views.py
 
     from aiohttp import web
     
@@ -160,8 +163,9 @@ Firstly we will create a function to handle requests to the index enpoint:
 
 To call the view, we need to map it to a route.
 
+`quickstart/api/routes.py`
+
 .. code-block:: python
-    :caption: quickstart/api/routes.py
 
     from aiohttp import web
 
@@ -173,15 +177,17 @@ To call the view, we need to map it to a route.
 
 Lastly we will register the api's routes in the project routes:
 
+`quickstart/routes.py`
+
 .. code-block:: python
-    :caption: quickstart/routes.py
+    
 
     from apps.api.routes import routespatters as api_routes_patterns
 
     routespatters = []
     routespatters += api_routes_patterns
 
-You have now wired an index view into the routes. Verify it’s working by accessing to the following url: `http://localhost:8080/ <http://localhost:8080/>`_
+You have now wired an index view into the routes. Verify it’s working by accessing to http://localhost:8080/.
 
 
 **Class bassed views**
@@ -205,8 +211,9 @@ As an aditional feature we want to be able to retrive the google url of an artis
 
 First of all, we need to define our Viewset in the `views.py` module.
 
+`quickstart/api/views.py`
+
 .. code-block:: python
-    :caption: quickstart/api/views.py
 
     import uuid
     from aiohttp import web
@@ -263,8 +270,10 @@ First of all, we need to define our Viewset in the `views.py` module.
 
 To expose the viewset we need to register it in a router:
 
-.. code-block:: python
-    :caption: quickstart/api/routes.py
+`quickstart/api/routes.py`
+
+
+.. code-block:: pythoǹ
 
     from aiohttp import web
     from webaio.routers import SimpleRouter
@@ -288,9 +297,10 @@ Testing
 -------
 To test the defined endpoints, we will extend the class `AioHTTPTestCase` provided by `aiohttp`. Let's create a simple test case for our viewset.
 
+`quickstart/api/tests/test.py`
+
 
 .. code-block:: python
-    :caption: quickstart/api/tests/test.py
 
 
     from aiohttp.test_utils import AioHTTPTestCase, unittest_run_loop
@@ -393,8 +403,10 @@ When `APIException` (or subclasses) is raised, webaio will return a response wit
 
 Let's try what happen if we try to get the detail of a non-existing Artist in our ViewSet. We will write a test to check that: 
 
+`quickstart/api/tests/test.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/tests/test.py}
 
     @unittest_run_loop
     async def test_detail_404(self):
@@ -404,7 +416,7 @@ Let's try what happen if we try to get the detail of a non-existing Artist in ou
 
 If we run the tests we will see the following error:
 
-    ::
+::
 
     ================================================== test session starts ===================================================
     platform linux -- Python 3.7.5, pytest-5.3.1, py-1.8.1, pluggy-0.13.1
@@ -431,8 +443,10 @@ This happens because the error is not properly handdled in the view.
 
 Firstly we need to add an `exceptions.py` module and define the exception in there:
 
+`quickstart/api/exceptions.py`
+
+
 .. code-block:: python
-    :caption: quickstart/api/exceptions.py
 
     from webaio.exceptions import APIException
 
@@ -444,9 +458,11 @@ Firstly we need to add an `exceptions.py` module and define the exception in the
 
 After that, we will modify the detail view:
 
+`quickstart/api/views.py`
+
 
 .. code-block:: python
-    :caption: quickstart/api/views.py
+
 
     async def detail(request):
         id = request.match_info['id']

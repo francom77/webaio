@@ -47,8 +47,9 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pip install pytest==5.3.1 pytest-cov==2.8.1
-            pytest --cov --cov-report html -x
+            pip install pytest==5.3.1 pytest-cov==2.8.1 coveralls==1.11.1
+            pytest --cov=webaio/tests --cov-report html -x
+            COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN coveralls
 
       - store_artifacts:
           path: htmlcov

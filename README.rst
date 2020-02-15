@@ -1,7 +1,9 @@
 webaio
 ======
-
-webaio provides a simple way to create async web applications based on `aiohttp`.
+.. image:: https://circleci.com/gh/francom77/webaio.svg?style=shield
+   :target: https://circleci.com/gh/francom77/webaio
+.. image:: https://coveralls.io/repos/github/francom77/webaio/badge.svg?branch=master
+   :target: https://coveralls.io/github/francom77/webaio?branch=master
 
 Main Features
 -------------

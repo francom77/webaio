@@ -88,7 +88,7 @@ In the project root directory, run:
 
 .. code-block:: text
 
-    $ docker-compose.up
+    $ docker-compose up
 
 
 For the first time the docker image will be built. After that the development server will run. webaio uses `aiottp-devtools`  development server. You can read the full documentation `here <https://github.com/aio-libs/aiohttp-devtools>`_.

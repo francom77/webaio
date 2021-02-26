@@ -1,2 +1,2 @@
-aiohttp==3.6.2
+aiohttp==3.7.4
 cookiecutter==1.7.0
